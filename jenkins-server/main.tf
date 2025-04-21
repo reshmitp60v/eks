@@ -69,7 +69,7 @@ module "ec2_instance" {
 
   instance_type               = var.instance_type
   ami                         = data.aws_ami.example.id
-  key_name                    = "my-new-key"
+  key_name                    = "reshmi"
   monitoring                  = true
   vpc_security_group_ids      = [module.sg.security_group_id]
   subnet_id                   = module.vpc.public_subnets[0]
@@ -79,8 +79,9 @@ module "ec2_instance" {
 
 
   tags = {
-    Name        = "jankins_server"
+    Name        = "test_server"
     Terraform   = "true"
     Environment = "dev"
+    map-migrated = "d-server-01w1643zlizp1x"
   }
 }
